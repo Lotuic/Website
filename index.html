@@ -93,91 +93,33 @@
     </div>
   </section>
 
-  <!-- SECTION 3: GALLERY -->
-  <section class="section-3" id="gallery">
+  <!-- SECTION 3: LOCATION -->
+  <section class="section-3" id="location">
     <div class="container">
       <div class="top-wrapper">
-        <h2 class="h2-heading">Browse Our<br/>Gallery</h2>
-        <div class="roa-text"><span class="roa-number">02</span> / Browse our Gallery</div>
+        <h2 class="h2-heading">Where will it<br/>take place?</h2>
+        <div class="roa-text"><span class="roa-number">02</span> / Location</div>
         <div class="line-decoration"></div>
-        <div class="roa-text left"><span class="roa-number">02</span> / Browse our Gallery</div>
+        <div class="roa-text left"><span class="roa-number">02</span> / Location</div>
       </div>
       <p class="section-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
       </p>
 
-      <div class="s3-layout">
-        <!-- Left: Image Slider -->
-        <div class="s3-slider-wrapper">
-          <div class="s3-slider" id="s3Slider">
-            <div class="s3-slide s3-active" data-index="0">
-              <div class="s3-img s3-img-1"></div>
-            </div>
-            <div class="s3-slide" data-index="1">
-              <div class="s3-img s3-img-2"></div>
-            </div>
-            <div class="s3-slide" data-index="2">
-              <div class="s3-img s3-img-3"></div>
-            </div>
-          </div>
-          <button class="s3-arrow s3-arrow-left" id="s3Prev" aria-label="Previous">&#8592;</button>
-          <button class="s3-arrow s3-arrow-right" id="s3Next" aria-label="Next">&#8594;</button>
-          <div class="s3-dots" id="s3Dots">
-            <span class="s3-dot s3-dot-active" data-index="0"></span>
-            <span class="s3-dot" data-index="1"></span>
-            <span class="s3-dot" data-index="2"></span>
-          </div>
-        </div>
-
-        <!-- Right: Content -->
-        <div class="s3-content-wrapper">
-          <div class="s3-content s3-content-active" id="s3Content0">
-            <div class="s3-top-header">
-              <h3 class="s3-heading">Kamchatka<br/>Solitude</h3>
-              <div class="s3-year">2019</div>
-            </div>
-            <div class="s3-info">
-              <div class="s3-label">Photography:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-              <div class="s3-label">Year:</div>
-              <p class="s3-text">2019</p>
-              <div class="s3-label">Narrative:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-            </div>
-            <a href="#" class="explore-photo-btn">Explore Photo</a>
-          </div>
-
-          <div class="s3-content" id="s3Content1">
-            <div class="s3-top-header">
-              <h3 class="s3-heading">Sightseeing</h3>
-              <div class="s3-year">2019</div>
-            </div>
-            <div class="s3-info">
-              <div class="s3-label">Photography:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-              <div class="s3-label">Year:</div>
-              <p class="s3-text">2019</p>
-              <div class="s3-label">Narrative:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-            </div>
-            <a href="#" class="explore-photo-btn">Explore Photo</a>
-          </div>
-
-          <div class="s3-content" id="s3Content2">
-            <div class="s3-top-header">
-              <h3 class="s3-heading">Camping</h3>
-              <div class="s3-year">2019</div>
-            </div>
-            <div class="s3-info">
-              <div class="s3-label">Photography:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-              <div class="s3-label">Year:</div>
-              <p class="s3-text">2019</p>
-              <div class="s3-label">Narrative:</div>
-              <p class="s3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-            </div>
-            <a href="#" class="explore-photo-btn">Explore Photo</a>
-          </div>
+      <!--
+        Um den Ort zu ändern: ersetze "Munich,Germany" in der src-URL unten
+        mit deinem gewünschten Ort, z.B. "Berlin,Germany" oder "48.1351,11.5820"
+      -->
+      <div class="location-layout">
+        <div class="location-img" style="background-image: url('../input/Englischer garten .png')"></div>
+        <div class="map-wrapper">
+          <iframe
+            class="map-iframe"
+            src="https://maps.google.com/maps?q=Amphitheater+Englischer+Garten+München&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
