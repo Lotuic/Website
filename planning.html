@@ -182,7 +182,7 @@
     function RadialOrbitalTimeline({ timelineData }) {
       const [expandedItems, setExpandedItems] = useState({});
       const [rotationAngle, setRotationAngle] = useState(0);
-      const [autoRotate, setAutoRotate] = useState(false);
+      const [autoRotate, setAutoRotate] = useState(true);
       const [pulseEffect, setPulseEffect] = useState({});
       const [activeNodeId, setActiveNodeId] = useState(null);
       const containerRef = useRef(null);
@@ -220,14 +220,25 @@
         });
       };
 
+      const rafRef = useRef(null);
+      const lastTimeRef = useRef(null);
+
       useEffect(() => {
-        let timer;
-        if (autoRotate) {
-          timer = setInterval(() => {
-            setRotationAngle((prev) => Number(((prev + 0.3) % 360).toFixed(3)));
-          }, 50);
+        if (!autoRotate) {
+          if (rafRef.current) cancelAnimationFrame(rafRef.current);
+          return;
         }
-        return () => clearInterval(timer);
+        const step = (timestamp) => {
+          if (lastTimeRef.current !== null) {
+            const delta = timestamp - lastTimeRef.current;
+            setRotationAngle((prev) => (prev + delta * 0.018) % 360);
+          }
+          lastTimeRef.current = timestamp;
+          rafRef.current = requestAnimationFrame(step);
+        };
+        lastTimeRef.current = null;
+        rafRef.current = requestAnimationFrame(step);
+        return () => cancelAnimationFrame(rafRef.current);
       }, [autoRotate]);
 
       const calculateNodePosition = (index, total) => {
@@ -295,9 +306,10 @@
                     ref={(el) => (nodeRefs.current[item.id] = el)}
                     className="absolute transition-all duration-700 cursor-pointer"
                     style={{
-                      transform: `translate(${position.x}px, ${position.y}px)`,
+                      transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
                       zIndex: isExpanded ? 200 : position.zIndex,
                       opacity: isExpanded ? 1 : position.opacity,
+                      willChange: "transform, opacity",
                     }}
                     onClick={(e) => { e.stopPropagation(); toggleItem(item.id); }}
                   >
