@@ -122,6 +122,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: flex-start;
   padding-left: 6%;
+  isolation: isolate;
 }
 
 /* Parallax layers — extra height gives scroll room without white edges */
@@ -137,7 +138,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .parallax-sky {
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -167,7 +168,7 @@ a { text-decoration: none; color: inherit; }
   background-size: 100% auto;
   background-position: center bottom;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 2;
   top: -15%;
   bottom: 0;
 }
@@ -177,7 +178,7 @@ a { text-decoration: none; color: inherit; }
   background-size: auto 68%;
   background-position: right bottom;
   background-repeat: no-repeat;
-  z-index: 3;
+  z-index: 4;
   top: -15%;
   bottom: 0;
 }
@@ -185,7 +186,7 @@ a { text-decoration: none; color: inherit; }
 /* Hero content */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: left;
   padding: 0 24px;
 }
