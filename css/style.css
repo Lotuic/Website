@@ -137,11 +137,16 @@ a { text-decoration: none; color: inherit; }
 }
 
 .parallax-sky {
-  background-image: url('../input/Background_v2.png');
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: no-repeat;
   z-index: 0;
+  overflow: hidden;
+}
+
+.sky-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Subtle dark gradient overlay on sky for text readability */
@@ -172,7 +177,7 @@ a { text-decoration: none; color: inherit; }
   background-size: auto 68%;
   background-position: right bottom;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: 3;
   top: -15%;
   bottom: 0;
 }
@@ -180,7 +185,7 @@ a { text-decoration: none; color: inherit; }
 /* Hero content */
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   text-align: left;
   padding: 0 24px;
 }
