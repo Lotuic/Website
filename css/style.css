@@ -139,15 +139,10 @@ a { text-decoration: none; color: inherit; }
 
 .parallax-sky {
   z-index: 1;
-  overflow: hidden;
-}
-
-.sky-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
+  background-image: url('../input/Background_v2.png');
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 /* Subtle dark gradient overlay on sky for text readability */
