@@ -14,7 +14,6 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
     #planning-root {
-      background: #000;
       min-height: calc(100vh - 80px);
       margin-top: 80px;
     }
@@ -183,7 +182,7 @@
     function RadialOrbitalTimeline({ timelineData }) {
       const [expandedItems, setExpandedItems] = useState({});
       const [rotationAngle, setRotationAngle] = useState(0);
-      const [autoRotate, setAutoRotate] = useState(true);
+      const [autoRotate, setAutoRotate] = useState(false);
       const [pulseEffect, setPulseEffect] = useState({});
       const [activeNodeId, setActiveNodeId] = useState(null);
       const containerRef = useRef(null);
@@ -263,8 +262,7 @@
       return (
         <div
           className="w-full flex flex-col items-center justify-center overflow-hidden"
-          style={{ backgroundImage: "url('input/Planning_Background.png')", backgroundSize: "cover", backgroundPosition: "center" }}
-          style={{ height: "calc(100vh - 80px)" }}
+          style={{ backgroundImage: "url('input/Planning_Background.png')", backgroundSize: "cover", backgroundPosition: "center", height: "calc(100vh - 80px)" }}
           ref={containerRef}
           onClick={handleContainerClick}
         >
